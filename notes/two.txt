@@ -1,0 +1,63 @@
+sys   
+os
+math
+logging
+datetime
+-- HOW TO DEVELOP A NEW LIBRARY
+
+r (4)
+w (2)
+x (1)
+
+rwx rwx rwx
+7 7 7
+751
+
+
+=================================================================
+METACHARCATERS
+
+. -> to match any character except a new line character
+? -> matching the preceeding character either 0 time or 1 time
+	Ex:
+		raj? => ra , raj
+* -> preceeding character will be macthed 0 to any number of times
+	Ex:
+		Raj* => Ra, Raj, Rajj, Rajjj,Rajjjj,Rajjjjj......
++ -> preceeding character will be macthed 1 to any number of times
+	Ex:
+		Raj+ => Raj, Rajj, Rajjj,Rajjjj,Rajjjjj......
+() -> Grouping
+		(Raj)+ => Raj, RajRaj,RajRajRaj,RajRajRajRaj
+[] -> match any of the characters
+	Ex:
+		[aeiou] -> a |e |i|o|u
+{m,n} -> Min m times and max n times will be matched
+	Ex:
+		Raj{2,5} =>Rajj, Rajjj, Rajjjj, Rajjjjj
+		Raj{2,} -> RajRaj, RajRajRaj,RajRajRajRaj,.....
+		Raj{,3}	-> Raj, RajRaj,RajRajRaj
+		Raj{3} -> RajRajRaj
+|  -> either or
+	Ex:
+		Raj|ram -> Raj , ram
+$ -> to match a character at the end
+^ -> to match a character at the begining	
+- -> range operator
+	a-f => a b c d e f
+	1-6 => 1 2 3 4 5 6
+Metasequences:
+
+\d -> mathes any digits (0-9)
+\D -> matches everything except a number
+\w -> matches the word character (a-zA-Z0-9_)
+\W -> matches everything except a word character
+\s -> space character
+\S -> Matches everything except a space character
+\b -> boundary character
+	Ex:
+		str="The main street is broad"
+		/road/
+		\broad\b
+\B -> non broundry character
+		/Broad\B

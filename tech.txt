@@ -1,0 +1,12 @@
+SPARK
+Spark
+Hadoop
+Python
+Tableau
+DWH
+HDFS
+YARN
+Sqoop
+Hive
+Kafka
+Airflow

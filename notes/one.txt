@@ -1,0 +1,262 @@
+
+1960
+
+Raghul Chennai Chocaloate	10  5 50  1960-01-01
+Priya  Chennai	Pen			2	1 2 1960-01-01
+
+1960-  DBMS
+Transaction
+Raghul Chennai  9848989899 M Chocaloate	10  5 50  1960-01-01
+Priya  Chennai	9848989896 F Pen			2	1 2 1960-01-01
+Raghul Chennai  9848989899 M Biscuits	5	5 25	1960-01-02
+
+SELECT SUM(AMOUNT) FROM TRANSACTION_TBL WHERE NAME = 'Raghul' ;
+
+1970+ RDBMS
+CUSTOMER									
+custid, custname , city, mobile, gender		
+1000,Raghul Ramesh, Chennai, 9898989898, M
+1001,Priya,Bangalore,9876543210, F
+
+Product
+prodid, prodname
+100
+
+TRANSACTION_TBL
+transid, custid,product_name, quantity,amount
+1,1000,Chocaloate	,5,50
+2,1001,Pen	,1,2
+3,1000,Biscuits	,5,25
+
+NoSQL (Not Only SQL):
+
+RaghulRamesh,37,Chennai,983989898,RaghulRamesh@gamil.com,M,"1613,Karapakkam,Chennai-India"
+Priya,Bangalore,F,"36,Electronic City, Near Infosys, Bangalore"
+Durga,'Hyderabad-Telengana'
+
+MongoDB, ElasticSearch, Apache(Hbase), Cassandra
+
+DataWarehouse:
+
+Goldman Sachs   - Investment Banking (3)  - PARA  - 6000+  (2008)
+American Express  - Card Seller
+Credit Suisse  - Government
+Socitie Generale  - Loan, Card, Investment
+Citi  - Card and Loan
+Nokia - 2010-2012  (Android)
+BestBuy  - Electronics device selling shop
+Standard Charaterd Bank  - Deals,
+Ford    -  America (Manufacturing)
+Intuit   - Tax Filing System 97% of USA 
+SamSung  - Electronic device
+
+
+Sales, Production, HR, Finance.....  DWH - sales_data
+
+OLTP  -> Online transaction Process
+OLAP -> Online Analysis Process (Read-Only)
+		History 
+		Rajesh Chennai
+		Rajesh New Delhi
+		
+		
+Redshift,BigQuery,*SNOWFLAKES*:
+
+Database							DataWarehouse
+OLTP								OLAP (For Analyze)
+
+Helps to perform					Analyzation for the business purpose
+basic operations
+(DML, DQL)
+
+Join								Single source
+
+Schema								Data Mart
+
+Cost - High							Low  
+
+History of data not maintained      History of the data will be maintained for analyzation
+
+
+ETL  -> Extract Transform Load
+
+ELT  -> Extract Load Tranformation
+
+India - 1000
+USA - 15000
+Europe - 200
+
+SELECT COUNTRY, SUM(AMOUNT) FROM TABLE GROUP BY COUNTRY;
+SELECT CATEGORY, SUM(AMOUNT) FROM TABLE GROUP BY 1;
+SELECT STATE, SUM(AMOUNT) FROM TABLE GROUP BY 1;
+SELECT TRANS_DATE, SUM(AMOUNT) FROM TABLE GROUP BY 1;
+
+Terminologies:
+
+Metadata -> data about data
+
+Data Mart  -> Summiarized data 
+Amazon - global business  
+
+
+10000000 transaction loaded into the transaction table  10L data 
+SELECT SUM(AMOUNT) FROM TRANSACTION_TBL WHERE COUNTRY = 'India' ;
+
+trans_ind   trans_usa  trans_aust trans_uk    ( Data Mart)
+
+sales, product, finance
+
+
+Java			
+C++
+.Net				Python
+Perl
+
+
+Data Engineering
+Data Analytics
+IOT
+Cloud
+DevOps
+Django/Flask
+Programmings
+
+PYTHON - SCALA - JAVA => Spark
+
+Python is a high level, dynamic, procedural and object oriented programming langauge
+
+Juido Van Rossum - Netherland  (Dropbox)
+
+1980's "Monto Python"  -> Python
+
+ealiest 1990
+
+1995  JAVA  2020 - Oracle - 
+
+AIML, DL, NLP (1950)
+
+numpy, pandas, matplotlib, sklearn.....
+
+30 mins
+
+
+2010 (JAVA)
+2012+ ( SQL, Python)
+
+
+Python Data Structure
+	Immutable
+		Numbers
+		Strings
+		Tuple
+	Mutable
+		List
+		Dictionary
+		Set
+
+name.upper()
+name.lower()
+name.swapcase()
+name='raghul ramesh'
+name.title()
+name.capitalize()
+name='Raghul Ramesh'
+name.casefold()
+
+-- index and find
+
+------------------------------SQL-----------------------------
+DDL ( Create ( database, table, view, index, sequence, function, procedure,
+trigger, cursor)
+, Alter (add column, rename column, drop column, modify column),
+ Drop (database, table, view, index, sequence, function, procedure,
+trigger, cursor),
+ Rename TABLE , 
+ Truncate(Table) )
+ 
+ DELETE and DROP
+ Procedure and Function
+ 1. IN, OUT, IN OUT                            IN
+ 2.	NA											Can be used in select statement
+ 3.												Must return return a value
+ 4. Logical ops/DML								Aggregation ops
+ 5. Func can be called							
+ 6. Call
+		Execute procedure
+		BEGIN
+			proceduce
+		END;
+		/
+		
+	CREATE OR REPLACE SEQUENCE cust_id_seq
+	STARTS WITH 1
+	INCREMENT BY 1
+	MAX VALUE 100000
+	CACHE;
+	
+	INSERT INTO CUSTOMER VALUES (cust_id_seq.nextval
+	
+	Constratints:
+		UNIQUE
+		NOT NULL
+		PRIMARY KEY ( UNIQUE + NOT NULL) 
+		FOREIGN KEY  ( ON DELETE CASCADE , ON UPDATE CASCADE)
+		CHECK
+		DEFAULT
+		
+DML ( INSERT, UPDATE, DELETE, MERGE)
+
+CTAS -> Create Table Customer AS
+		SELECT * FROM mytable;
+		
+1. I have a table : customer where i have loaded 100 records,
+	50 male and 50 female records are loaded. It is loaded incorrectly due to the logic issue. males are loaded as female and vice versa.
+	
+	UPDATE customer SET gender= casefold
+	WHEN gender = 'Male' THEN 'Female'
+	ELSE 'Female' END;
+	
+	JOINS (inner, outer(left, right, full))
+		ANTI JOIN
+		
+	PIVOT
+	
+------------------------------SQL-----------------------------
+Python DataStructure
+
+Immutable
+	Numbers
+	Strings
+	Tuple    ()
+Mutable
+	List    []
+	Dictionary
+	Set
+	
+	
+Syntax:
+    [expr for val in collection/sequence]
+    [expr for val in collection/sequence if con1  ]
+    [expr for val in collection/sequence if con1 and/or cond2 ]
+    [expr for val in collection/sequence for val2 in c2/s2 ]
+	
+	list(range(1,11))
+	
+	nums=list(range(1,11))
+	[x**2 for x in nums]
+
+	[x for x in nums if x%2==1]
+	
+	[x**2 for x in nums if x%2==1 and x>5]
+	
+	x=[1,2,3,4,5]
+	y=[6,7,8,9,10]
+	[(a,b) for a in x for b in y ]	
+	
+	x=[1,2,3,4,5]
+	y=[6,7,8,9,10]
+	[a+b for a,b in zip(x,y)]
+	
+	
+	-- lambda function
+	
